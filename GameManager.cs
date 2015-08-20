@@ -22,6 +22,7 @@ namespace RPG
 
         public static int getInputBetween(int start, int end)
         {
+            Console.Write("Enter: ");
 
             try
             {
@@ -31,7 +32,10 @@ namespace RPG
                 while (start <= end)
                 {
                     if (num >= start && num <= end)
+                    {
+                        Console.WriteLine("");
                         return num;
+                    }
                     else
                     {
                         Console.WriteLine("Invalid Option. Try Again.");

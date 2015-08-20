@@ -17,6 +17,8 @@ namespace RPG
         protected int intelligence;
         protected int charisma;
 
+        protected SpecialAbilityList abilities;
+        protected Inventory inventory;
         //armor (clothes)
         //weapon, shield
         //items (belt, necklace, rings)
@@ -35,6 +37,10 @@ namespace RPG
             endurance = 10;
             charisma = 10;
             intelligence = 10;
+
+            abilities = new SpecialAbilityList(new Slash());
+            inventory = new Inventory();
+            inventory.addItem(new HealthPotion());
         }
 
         public abstract void turn( Character enemy );
@@ -58,10 +64,23 @@ namespace RPG
             get { return name; }
             set { name = value; }
         }
+
         public int Health
         {
             get { return health; }
             set { health = value; }
+        }
+
+        public int MaxHealth
+        {
+            get { return healthMax; }
+            set { MaxHealth = value; }
+        }
+
+        public int Strength
+        {
+            get { return strength; }
+            set { strength = value; }
         }
     }
 }
